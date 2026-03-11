@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Punjab Kings Store — Consolidated QA Report (2026-03-11)</title>
+  <style>
+    :root {
+      --brand: #B71C1C;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --bg: #ffffff;
+      --shade: #f9fafb;
+      --pass: #0b7a2a;
+      --fail: #b42318;
+      --partial: #8a5b00;
+    }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.5; }
+    a { color: #0EA5E9; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 980px; margin: 0 auto; padding: 28px 16px; }
+    .header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 18px; }
+    .title { font-size: 24px; font-weight: 800; letter-spacing: .2px; }
+    .meta { color: var(--muted); font-size: 13px; }
+    .pill { display:inline-block; padding: 4px 8px; border:1px solid var(--border); border-radius:999px; font-size:12px; color: var(--muted); }
+
+    h2 { font-size: 18px; margin: 18px 0 10px; }
+    h3 { font-size: 15px; margin: 14px 0 8px; color: var(--brand); }
+    .section { margin: 22px 0; }
+    .card { background:#fff; border:1px solid var(--border); border-radius:10px; padding:14px; }
+    .grid-2 { display:grid; grid-template-columns:1.1fr .9fr; gap:14px; }
+    .list { margin: 0; padding-left: 18px; }
+    .list li { margin: 6px 0; }
+
+    /* Scenario table */
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid var(--border); padding: 8px 10px; vertical-align: top; text-align: left; font-size: 14px; }
+    th { background: var(--shade); }
+    code { background:#f3f4f6; padding: 1px 4px; border-radius: 4px; }
+    .pass { color: var(--pass); font-weight: 700; }
+    .fail { color: var(--fail); font-weight: 700; }
+    .partial { color: var(--partial); font-weight: 700; }
+
+    /* Collapsible issues */
+    details.issue { border:1px solid var(--border); border-radius:10px; background:#fff; margin:10px 0; overflow:hidden; }
+    details.issue > summary { list-style:none; cursor:pointer; padding:12px 14px; background:var(--shade); display:flex; gap:10px; align-items:baseline; }
+    details.issue > summary::-webkit-details-marker { display:none; }
+    .sev { font-weight:700; font-size:12px; padding:2px 6px; border-radius:6px; border:1px solid var(--border); color:#374151; background:#fff; }
+    .cat { color:#374151; font-size:12px; }
+    .url { color:#111827; font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .issue-body { padding: 12px 14px; }
+    .issue-body p { margin: 8px 0; }
+    .shots { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:10px; margin-top: 8px; }
+    .shots img { width:100%; height:auto; border:1px solid var(--border); border-radius:8px; display:block; }
+    .hint { color: var(--muted); font-size: 12px; }
+
+    /* Print */
+    @media print {
+      a { color: inherit; text-decoration: underline; }
+      details.issue[open] > summary { border-bottom: 1px solid var(--border); }
+    }
+  </style>
+  <script>
+    // Small enhancement: allow "Expand/Collapse All" when viewing in browser
+    function toggleAll(open) {
+      document.querySelectorAll('details.issue').forEach(d => d.open = open);
+    }
+  </script>
+  </head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <div class="title">Consolidated QA Report</div>
+        <div class="meta">Punjab Kings Store • Date: 2026-03-11 • Base URL: <a href="https://store.punjabkingsipl.in/">store.punjabkingsipl.in</a></div>
+      </div>
+      <div>
+        <span class="pill">Pages audited: 31</span>
+        <span class="pill">Issues logged: 76</span>
+      </div>
+    </div>
+
+    <div class="section grid-2">
+      <div class="card">
+        <h2>Executive Summary</h2>
+        <ul class="list">
+          <li>Core shopping flows (login, wishlist, sort/filter, add-to-cart, logout) work; PLP add-to-cart UX adds an extra step.</li>
+          <li>Automated scan surfaced recurring React runtime errors and aborted network calls; three endpoints return 404.</li>
+          <li>UI copy/layout tweaks (order tracking copy, PDP tax copy, filter taxonomy labels, Brands page balance, mobile footer) will markedly improve polish.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Quick Actions</h2>
+        <div class="hint">Tip: In browser, use buttons below.</div>
+        <p>
+          <button onclick="toggleAll(true)">Expand all issues</button>
+          <button onclick="toggleAll(false)">Collapse all issues</button>
+        </p>
+        <p class="hint">Full machine log remains available in <a href="report.html">report.html</a>.</p>
+      </div>
+    </div>
+
+    <div class="section card">
+      <h2>Functional Scenario Coverage (from functional_test.html)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Scenario</th>
+            <th>Status</th>
+            <th>Observed Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Login with mobile OTP</td>
+            <td class="pass">Pass</td>
+            <td>Login succeeded with <code>8888888888</code> and OTP <code>5401</code>.</td>
+          </tr>
+          <tr>
+            <td>Profile page access after login</td>
+            <td class="pass">Pass</td>
+            <td><code>/profile/details</code> opened successfully and profile/account sections loaded.</td>
+          </tr>
+          <tr>
+            <td>Logout flow</td>
+            <td class="pass">Pass</td>
+            <td>Sign out confirmation opened and logout returned the user to the homepage.</td>
+          </tr>
+          <tr>
+            <td>Wishlist add from listing page</td>
+            <td class="pass">Pass</td>
+            <td>First product was added to wishlist from the PLP and appeared in <code>/wishlist</code>.</td>
+          </tr>
+          <tr>
+            <td>Wishlist remove</td>
+            <td class="pass">Pass</td>
+            <td>Item was removed successfully and wishlist returned to the empty state.</td>
+          </tr>
+          <tr>
+            <td>Sort by Price Low to High</td>
+            <td class="pass">Pass</td>
+            <td>Sort overlay opened and product order changed; URL updated to <code>?sort_on=price_asc</code>.</td>
+          </tr>
+          <tr>
+            <td>Category filter: Caps</td>
+            <td class="pass">Pass</td>
+            <td>Listing narrowed from 12 visible product links to 1 product and URL updated to <code>?category=caps</code>.</td>
+          </tr>
+          <tr>
+            <td>PDP delivery-location validation</td>
+            <td class="pass">Pass</td>
+            <td>Pincode check worked with <code>140001</code> and delivery promise text was shown.</td>
+          </tr>
+          <tr>
+            <td>Add to cart from PDP</td>
+            <td class="pass">Pass</td>
+            <td>Item was added to bag after entering a valid pincode. Cart counter changed to <code>1 item in cart</code>.</td>
+          </tr>
+          <tr>
+            <td>Cart quantity increment</td>
+            <td class="pass">Pass</td>
+            <td>Quantity increased from 1 to 2 and price summary updated accordingly.</td>
+          </tr>
+          <tr>
+            <td>Remove item from cart</td>
+            <td class="pass">Pass</td>
+            <td>Remove confirmation opened and final remove action returned cart to empty state.</td>
+          </tr>
+          <tr>
+            <td>Open bag and guest checkout entry</td>
+            <td class="pass">Pass</td>
+            <td>Bag page displayed <code>LOGIN</code> and <code>CONTINUE AS GUEST</code> CTAs.</td>
+          </tr>
+          <tr>
+            <td>Add to cart from PLP</td>
+            <td class="partial">Partial</td>
+            <td>PLP <code>ADD TO CART</code> opens an inline quick-buy panel (adds a step).</td>
+          </tr>
+          <tr>
+            <td>Order tracking empty submit</td>
+            <td class="pass">Pass</td>
+            <td>Blank submit showed validation feedback: <code>Invalid Order Id</code>.</td>
+          </tr>
+          <tr>
+            <td>Contact Us empty submit</td>
+            <td class="pass">Pass</td>
+            <td>Blank submit showed required-field validation for name, phone, and email.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Consolidated Issues (screenshots attached)</h2>
+
+      <!-- Functional Findings -->
+      <h3>Functional Findings</h3>
+      <details class="issue">
+        <summary>
+          <span class="sev">Medium</span>
+          <span class="cat">PLP quick add</span>
+          <span class="url"><a href="https://store.punjabkingsipl.in/products">/products</a></span>
+        </summary>
+        <div class="issue-body">
+          <p>The PLP <code>ADD TO CART</code> CTA expands an inline quick-buy panel instead of directly adding to cart, which may confuse users expecting a direct add.</p>
+          <div class="shots">
+            <img src="screenshots/functional-plp-quick-add.png" alt="PLP inline quick add panel">
+          </div>
+        </div>
+      </details>
+      <details class="issue">
+        <summary>
+          <span class="sev">Low</span>
+          <span class="cat">Cart remove affordance</span>
+          <span class="url"><a href="https://store.punjabkingsipl.in/cart/bag">/cart/bag</a></span>
+        </summary>
+        <div class="issue-body">
+          <p>Initial remove control is an unlabeled icon; removal is possible but the affordance is weak until the confirmation sheet appears.</p>
+          <div class="shots">
+            <img src="screenshots/functional-cart-with-item.png" alt="Cart with item — remove affordance">
+          </div>
+        </div>
+      </details>
+      <details class="issue">
+        <summary>
+          <span class="sev">Low</span>
+          <span class="cat">Order tracking validation copy</span>
+          <span class="url"><a href="https://store.punjabkingsipl.in/order-tracking">/order-tracking</a></span>
+        </summary>
+        <div class="issue-body">
+          <p>Blank submit shows a generic <code>Invalid Order Id</code> message instead of clearer required-field guidance.</p>
+          <div class="shots">
+            <img src="screenshots/functional-order-tracking-invalid.png" alt="Order tracking invalid-state validation">
+          </div>
+        </div>
+      </details>
+
+      <!-- Automated Highlights -->
+      <h3>Automated Scan Highlights</h3>
+      <details class="issue">
+        <summary>
+          <span class="sev">High</span>
+          <span class="cat">HTTP 404</span>
+          <span class="url"><a href="https://store.punjabkingsipl.in/collection">/collection</a></span>
+        </summary>
+        <div class="issue-body">
+          <p>Page returns HTTP 404.</p>
+          <div class="shots">
+            <img src="screenshots/store-punjabkingsipl-in-collection.png" alt="/collection 404">
+          </div>
+        </div>
+      </details>
+      <details class="issue">
+        <summary>
+          <span class="sev">High</span>
+          <span class="cat">HTTP 404</span>
+          <span class="url"><a href="https://store.punjabkingsipl.in/products/match-jersey">/products/match-jersey</a></span>
+        </summary>
+        <div class="issue-body">
+          <p>Page returns HTTP 404.</p>
+          <div class="shots">
+            <img src="screenshots/store-punjabkingsipl-in-products-match-jersey.png" alt="/products/match-jersey 404">
+          </div>
+        </div>
+      </details>
+      <details class="issue">
+        <summary>
+          <span class="sev">High</span>
+          <span class="cat">HTTP 404</span>
+          <span class="url"><a href="https://store.punjabkingsipl.in/products/training-jersey">/products/training-jersey</a></span>
+        </summary>
+        <div class="issue-body">
+          <p>Page returns HTTP 404.</p>
+          <div class="shots">
+            <img src="screenshots/store-punjabkingsipl-in-products-training-jersey.png" alt="/products/training-jersey 404">
+          </div>
+        </div>
+      </details>
+      <details class="issue">
+        <summary>
+          <span class="sev">Medium</span>
+          <span class="cat">JavaScript error</span>
+          <span class="url"><a href="https://store.punjabkingsipl.in/">/ (Home)</a></span>
+        </summary>
+        <div class="issue-body">
+          <p>Repeated <code>Minified React error #421</code> observed during rendering.</p>
+          <div class="shots">
+            <img src="screenshots/store-punjabkingsipl-in.png" alt="Home page screenshot">
+          </div>
+        </div>
+      </details>
+      <details class="issue">
+        <summary>
+          <span class="sev">Medium</span>
+          <span class="cat">Request failures</span>
+          <span class="url"><a href="https://store.punjabkingsipl.in/products">/products</a>, <a href="https://store.punjabkingsipl.in/">/</a></span>
+        </summary>
+        <div class="issue-body">
+          <p>Service-worker and GraphQL calls aborted across multiple pages.</p>
+          <div class="shots">
+            <img src="screenshots/store-punjabkingsipl-in-products.png" alt="Products page screenshot">
+            <img src="screenshots/store-punjabkingsipl-in.png" alt="Home page screenshot (request failures)">
+          </div>
+        </div>
+      </details>
+      <details class="issue">
+        <summary>
+          <span class="sev">Medium</span>
+          <span class="cat">Cross-domain navigation</span>
+          <span class="url"><a href="https://punjab-kings.fynd.io/products">punjab-kings.fynd.io/products</a></span>
+        </summary>
+        <div class="issue-body">
+          <p>Links to a different domain can affect brand and session continuity.</p>
+          <div class="shots">
+            <img src="screenshots/store-punjabkingsipl-in.png" alt="Home with cross-domain links visible">
+          </div>
+        </div>
+      </details>
+
+      <!-- UI Issues -->
+      <h3>UI Issues</h3>
+      <details class="issue">
+        <summary>
+          <span class="sev">High</span>
+          <span class="cat">Copy / English</span>
+          <span class="url"><a href="https://store.punjabkingsipl.in/order-tracking">/order-tracking</a></span>
+        </summary>
+        <div class="issue-body">
+          <p>Heading reads <code>Where is Order Id?</code> (awkward, inconsistent). Also duplicated below CTA.</p>
+          <p><strong>Recommendation:</strong> Use <code>Where is your order ID?</code> or <code>Track your order</code>, remove duplicate line.</p>
+          <div class="shots">
+            <img src="screenshots/ui-order-tracking-page.png" alt="Order tracking copy/UI">
+          </div>
+        </div>
+      </details>
+      <details class="issue">
+        <summary>
+          <span class="sev">Medium</span>
+          <span class="cat">Copy / Grammar</span>
+          <span class="url"><a href="https://store.punjabkingsipl.in/product/pbks-varsity-jacket-17632075">/product/pbks-varsity-jacket-17632075</a></span>
+        </summary>
+        <div class="issue-body">
+          <p>Helper text says <code>Price inclusive of all tax</code>.</p>
+          <p><strong>Recommendation:</strong> Replace with <code>Price inclusive of all taxes</code>.</p>
+          <div class="shots">
+            <img src="screenshots/ui-pdp-tax-copy.png" alt="PDP tax copy grammar">
+          </div>
+        </div>
+      </details>
+      <details class="issue">
+        <summary>
+          <span class="sev">Medium</span>
+          <span class="cat">Copy / Taxonomy</span>
+          <span class="url"><a href="https://store.punjabkingsipl.in/products">/products</a></span>
+        </summary>
+        <div class="issue-body">
+          <p>Filter rail exposes internal-looking labels (<code>Size Depth</code>, <code>L1 Category</code>, <code>L2 Category</code>).</p>
+          <p><strong>Recommendation:</strong> Rename to business-friendly terms or hide internal taxonomy filters.</p>
+          <div class="shots">
+            <img src="screenshots/ui-products-filter-size-depth.png" alt="Filter: Size Depth">
+            <img src="screenshots/ui-products-filter-l1-category.png" alt="Filter: L1 Category">
+            <img src="screenshots/ui-products-filter-l2-category.png" alt="Filter: L2 Category">
+          </div>
+        </div>
+      </details>
+      <details class="issue">
+        <summary>
+          <span class="sev">Medium</span>
+          <span class="cat">Responsive / Readability</span>
+          <span class="url"><a href="https://store.punjabkingsipl.in/">/</a> (mobile)</span>
+        </summary>
+        <div class="issue-body">
+          <p>Footer links and legal text are cramped/small on mobile.</p>
+          <p><strong>Recommendation:</strong> Increase font-size and spacing; improve grouping/tap targets.</p>
+          <div class="shots">
+            <img src="screenshots-mobile/store-punjabkingsipl-in-mobile.png" alt="Mobile home footer sizing">
+          </div>
+        </div>
+      </details>
+      <details class="issue">
+        <summary>
+          <span class="sev">Low</span>
+          <span class="cat">Layout / Alignment</span>
+          <span class="url"><a href="https://store.punjabkingsipl.in/brands">/brands</a></span>
+        </summary>
+        <div class="issue-body">
+          <p>Single oversized brand card pinned left; page looks empty/unbalanced.</p>
+          <p><strong>Recommendation:</strong> Adjust grid or container width; center single-brand state.</p>
+          <div class="shots">
+            <img src="screenshots/store-punjabkingsipl-in-brands.png" alt="Brands page balance">
+          </div>
+        </div>
+      </details>
+      <details class="issue">
+        <summary>
+          <span class="sev">Low</span>
+          <span class="cat">Layout / Visual balance</span>
+          <span class="url"><a href="https://store.punjabkingsipl.in/order-tracking">/order-tracking</a></span>
+        </summary>
+        <div class="issue-body">
+          <p>Small module near top; large empty gap before footer.</p>
+          <p><strong>Recommendation:</strong> Add helpful content or tighten layout to feel intentional.</p>
+          <div class="shots">
+            <img src="screenshots/ui-order-tracking-page.png" alt="Order tracking page balance">
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <div class="section" style="color:var(--muted); font-size:12px;">
+      Assembled on 2026-03-11 from functional_test.html, report.html, UI_issue_report.html and screenshots. Links and evidence remain intact for traceability.
+    </div>
+  </div>
+</body>
+</html>
