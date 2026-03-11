@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Punjab Kings Store Functional Test Report</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; color: #1f1f1f; line-height: 1.45; }
+    h1, h2 { margin-bottom: 8px; }
+    .meta, .note { margin-bottom: 20px; }
+    .note { background: #fafafa; border: 1px solid #e5e5e5; padding: 12px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+    th, td { border: 1px solid #d9d9d9; padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #f5f5f5; }
+    .pass { color: #0b7a2a; font-weight: 700; }
+    .fail { color: #b42318; font-weight: 700; }
+    .partial { color: #8a5b00; font-weight: 700; }
+    .blocked { color: #8a5b00; font-weight: 700; }
+    ul { margin-top: 0; }
+  </style>
+</head>
+<body>
+  <h1>Punjab Kings Store Functional Test Report</h1>
+  <div class="meta">
+    <p><strong>Date:</strong> 2026-03-11</p>
+    <p><strong>Base URL:</strong> <a href="https://store.punjabkingsipl.in/">https://store.punjabkingsipl.in/</a></p>
+    <p><strong>Execution:</strong> live Playwright browser run with authenticated flow using the provided mobile number and OTP.</p>
+  </div>
+
+  <div class="note">
+    Login, wishlist, sorting, filtering, cart add/remove, quantity update, logout, and basic form validation were tested live. The store is usable for core shopping only after a delivery pincode is entered on the PDP. Screenshots are attached for the functional issues and important state changes.
+  </div>
+
+  <h2>Scenario Coverage</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Scenario</th>
+        <th>Status</th>
+        <th>Observed Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Login with mobile OTP</td>
+        <td class="pass">Pass</td>
+        <td>Login succeeded with <code>8888888888</code> and OTP <code>5401</code>.</td>
+      </tr>
+      <tr>
+        <td>Profile page access after login</td>
+        <td class="pass">Pass</td>
+        <td><code>/profile/details</code> opened successfully and profile/account sections loaded.</td>
+      </tr>
+      <tr>
+        <td>Logout flow</td>
+        <td class="pass">Pass</td>
+        <td>Sign out confirmation opened and logout returned the user to the homepage.</td>
+      </tr>
+      <tr>
+        <td>Wishlist add from listing page</td>
+        <td class="pass">Pass</td>
+        <td>First product was added to wishlist from the PLP and appeared in <code>/wishlist</code>.</td>
+      </tr>
+      <tr>
+        <td>Wishlist remove</td>
+        <td class="pass">Pass</td>
+        <td>Item was removed successfully and wishlist returned to the empty state.</td>
+      </tr>
+      <tr>
+        <td>Sort by Price Low to High</td>
+        <td class="pass">Pass</td>
+        <td>Sort overlay opened and product order changed; URL updated to <code>?sort_on=price_asc</code>.</td>
+      </tr>
+      <tr>
+        <td>Category filter: Caps</td>
+        <td class="pass">Pass</td>
+        <td>Listing narrowed from 12 visible product links to 1 product and URL updated to <code>?category=caps</code>.</td>
+      </tr>
+      <tr>
+        <td>PDP delivery-location validation</td>
+        <td class="pass">Pass</td>
+        <td>Pincode check worked with <code>140001</code> and delivery promise text was shown.</td>
+      </tr>
+      <tr>
+        <td>Add to cart from PDP</td>
+        <td class="pass">Pass</td>
+        <td>Item was added to bag after entering a valid pincode. Cart counter changed to <code>1 item in cart</code>.</td>
+      </tr>
+      <tr>
+        <td>Cart quantity increment</td>
+        <td class="pass">Pass</td>
+        <td>Quantity increased from 1 to 2 and price summary updated accordingly.</td>
+      </tr>
+      <tr>
+        <td>Remove item from cart</td>
+        <td class="pass">Pass</td>
+        <td>Remove confirmation opened and final remove action returned cart to empty state.</td>
+      </tr>
+      <tr>
+        <td>Open bag and guest checkout entry</td>
+        <td class="pass">Pass</td>
+        <td>Bag page displayed <code>LOGIN</code> and <code>CONTINUE AS GUEST</code> CTAs.</td>
+      </tr>
+      <tr>
+        <td>Add to cart from PLP</td>
+        <td class="partial">Partial</td>
+        <td>PLP <code>ADD TO CART</code> opened an inline quick-buy panel instead of directly adding to bag. This is functional but adds an extra step.</td>
+      </tr>
+      <tr>
+        <td>Order tracking empty submit</td>
+        <td class="pass">Pass</td>
+        <td>Blank submit showed validation feedback: <code>Invalid Order Id</code>.</td>
+      </tr>
+      <tr>
+        <td>Contact Us empty submit</td>
+        <td class="pass">Pass</td>
+        <td>Blank submit showed required-field validation for name, phone number, and email address.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Functional Findings</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Severity</th>
+        <th>Area</th>
+        <th>URL</th>
+        <th>Issue</th>
+        <th>Evidence</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Medium</td>
+        <td>PLP quick add</td>
+        <td><a href="https://store.punjabkingsipl.in/products">/products</a></td>
+        <td>The PLP <code>ADD TO CART</code> CTA does not directly add the product to the cart. It expands an inline quick-buy block with style/size details instead. That is not necessarily broken, but it is a different flow than the button label suggests and can confuse users expecting a direct add.</td>
+        <td><a href="screenshots/functional-plp-quick-add.png">functional-plp-quick-add.png</a></td>
+      </tr>
+      <tr>
+        <td>Low</td>
+        <td>Cart item removal affordance</td>
+        <td><a href="https://store.punjabkingsipl.in/cart/bag">/cart/bag</a></td>
+        <td>The initial remove trigger inside the cart is an unlabeled icon/button. Remove is possible, but the affordance is weak until the confirmation sheet appears.</td>
+        <td><a href="screenshots/functional-cart-with-item.png">functional-cart-with-item.png</a></td>
+      </tr>
+      <tr>
+        <td>Low</td>
+        <td>Order tracking validation copy</td>
+        <td><a href="https://store.punjabkingsipl.in/order-tracking">/order-tracking</a></td>
+        <td>Blank submit returns a generic <code>Invalid Order Id</code> message instead of clearer required-field guidance.</td>
+        <td><a href="screenshots/functional-order-tracking-invalid.png">functional-order-tracking-invalid.png</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Evidence Snapshot</h2>
+  <ul>
+    <li><a href="screenshots/functional-plp-quick-add.png">PLP inline quick-add state</a></li>
+    <li><a href="screenshots/functional-contact-validation.png">Contact form validation</a></li>
+    <li><a href="screenshots/functional-order-tracking-invalid.png">Order tracking invalid-state validation</a></li>
+    <li><a href="screenshots/functional-cart-with-item.png">Cart with item after valid add-to-cart</a></li>
+    <li><a href="screenshots/functional-cart-empty-after-remove.png">Cart empty after remove</a></li>
+  </ul>
+
+  <h2>Recommended Next Checks</h2>
+  <ul>
+    <li>Run checkout deeper with a non-production payment path if a safe test payment method is available.</li>
+    <li>Validate coupon application behavior from the bag page.</li>
+    <li>Validate guest checkout address entry and shipping step.</li>
+    <li>Validate profile edit persistence if test-safe personal details are available.</li>
+    <li>Validate order tracking with a known valid order ID.</li>
+  </ul>
+</body>
+</html>

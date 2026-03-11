@@ -1,0 +1,1269 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Punjab Kings Store QA Report</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; color: #222; }
+    h1, h2 { margin-bottom: 8px; }
+    table { border-collapse: collapse; width: 100%; margin-bottom: 24px; }
+    th, td { border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left; }
+    th { background: #f4f4f4; }
+    pre { white-space: pre-wrap; margin: 0; font-size: 12px; }
+    .meta { margin-bottom: 24px; }
+  </style>
+</head>
+<body>
+  <h1>Punjab Kings Store QA Report</h1>
+  <div class="meta">
+    <p><strong>Base URL:</strong> <a href="https://store.punjabkingsipl.in/">https://store.punjabkingsipl.in/</a></p>
+    <p><strong>Run date:</strong> Wed Mar 11 2026 11:14:05 GMT+0530 (India Standard Time)</p>
+    <p><strong>Pages audited:</strong> 31</p>
+    <p><strong>Total issues logged:</strong> 76</p>
+  </div>
+
+  <h2>Findings</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Severity</th>
+        <th>Category</th>
+        <th>Issue</th>
+        <th>URL</th>
+        <th>Screenshot</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>6 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/">https://store.punjabkingsipl.in/</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in.png">screenshots/store-punjabkingsipl-in.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/api/service/application/graphql/ :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/api/service/application/graphql/ :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/api/service/application/graphql/ :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>5 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/">https://store.punjabkingsipl.in/</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in.png">screenshots/store-punjabkingsipl-in.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/products">https://store.punjabkingsipl.in/products</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-products.png">screenshots/store-punjabkingsipl-in-products.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>2 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/products">https://store.punjabkingsipl.in/products</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-products.png">screenshots/store-punjabkingsipl-in-products.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/categories">https://store.punjabkingsipl.in/categories</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-categories.png">screenshots/store-punjabkingsipl-in-categories.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>2 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/categories">https://store.punjabkingsipl.in/categories</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-categories.png">screenshots/store-punjabkingsipl-in-categories.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/collections">https://store.punjabkingsipl.in/collections</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-collections.png">screenshots/store-punjabkingsipl-in-collections.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>2 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/collections">https://store.punjabkingsipl.in/collections</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-collections.png">screenshots/store-punjabkingsipl-in-collections.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/brands">https://store.punjabkingsipl.in/brands</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-brands.png">screenshots/store-punjabkingsipl-in-brands.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>2 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/brands">https://store.punjabkingsipl.in/brands</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-brands.png">screenshots/store-punjabkingsipl-in-brands.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>high</td>
+        <td>HTTP error</td>
+        <td>Page returned HTTP 404.</td>
+        <td><a href="https://store.punjabkingsipl.in/collection">https://store.punjabkingsipl.in/collection</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-collection.png">screenshots/store-punjabkingsipl-in-collection.png</a></td>
+        <td><pre></pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/collection">https://store.punjabkingsipl.in/collection</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-collection.png">screenshots/store-punjabkingsipl-in-collection.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>3 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/collection">https://store.punjabkingsipl.in/collection</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-collection.png">screenshots/store-punjabkingsipl-in-collection.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/collection/men">https://store.punjabkingsipl.in/collection/men</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-collection-men.png">screenshots/store-punjabkingsipl-in-collection-men.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>3 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/collection/men">https://store.punjabkingsipl.in/collection/men</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-collection-men.png">screenshots/store-punjabkingsipl-in-collection-men.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>5 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/order-tracking">https://store.punjabkingsipl.in/order-tracking</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-order-tracking.png">screenshots/store-punjabkingsipl-in-order-tracking.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/api/service/application/graphql/ :: net::ERR_ABORTED
+image https://store.punjabkingsipl.in/assets/images/placeholder19x6.png :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/contact-us">https://store.punjabkingsipl.in/contact-us</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-contact-us.png">screenshots/store-punjabkingsipl-in-contact-us.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>2 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/contact-us">https://store.punjabkingsipl.in/contact-us</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-contact-us.png">screenshots/store-punjabkingsipl-in-contact-us.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/about-us">https://store.punjabkingsipl.in/about-us</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-about-us.png">screenshots/store-punjabkingsipl-in-about-us.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>2 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/about-us">https://store.punjabkingsipl.in/about-us</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-about-us.png">screenshots/store-punjabkingsipl-in-about-us.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>4 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/privacy-policy">https://store.punjabkingsipl.in/privacy-policy</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-privacy-policy.png">screenshots/store-punjabkingsipl-in-privacy-policy.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+image https://store.punjabkingsipl.in/assets/images/placeholder19x6.png :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>2 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/privacy-policy">https://store.punjabkingsipl.in/privacy-policy</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-privacy-policy.png">screenshots/store-punjabkingsipl-in-privacy-policy.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/shipping-policy">https://store.punjabkingsipl.in/shipping-policy</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-shipping-policy.png">screenshots/store-punjabkingsipl-in-shipping-policy.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>2 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/shipping-policy">https://store.punjabkingsipl.in/shipping-policy</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-shipping-policy.png">screenshots/store-punjabkingsipl-in-shipping-policy.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/return-policy">https://store.punjabkingsipl.in/return-policy</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-return-policy.png">screenshots/store-punjabkingsipl-in-return-policy.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>2 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/return-policy">https://store.punjabkingsipl.in/return-policy</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-return-policy.png">screenshots/store-punjabkingsipl-in-return-policy.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/terms-and-conditions">https://store.punjabkingsipl.in/terms-and-conditions</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-terms-and-conditions.png">screenshots/store-punjabkingsipl-in-terms-and-conditions.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>2 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/terms-and-conditions">https://store.punjabkingsipl.in/terms-and-conditions</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-terms-and-conditions.png">screenshots/store-punjabkingsipl-in-terms-and-conditions.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>high</td>
+        <td>HTTP error</td>
+        <td>Page returned HTTP 404.</td>
+        <td><a href="https://store.punjabkingsipl.in/products/match-jersey">https://store.punjabkingsipl.in/products/match-jersey</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-products-match-jersey.png">screenshots/store-punjabkingsipl-in-products-match-jersey.png</a></td>
+        <td><pre></pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/products/match-jersey">https://store.punjabkingsipl.in/products/match-jersey</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-products-match-jersey.png">screenshots/store-punjabkingsipl-in-products-match-jersey.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>3 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/products/match-jersey">https://store.punjabkingsipl.in/products/match-jersey</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-products-match-jersey.png">screenshots/store-punjabkingsipl-in-products-match-jersey.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>high</td>
+        <td>HTTP error</td>
+        <td>Page returned HTTP 404.</td>
+        <td><a href="https://store.punjabkingsipl.in/products/training-jersey">https://store.punjabkingsipl.in/products/training-jersey</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-products-training-jersey.png">screenshots/store-punjabkingsipl-in-products-training-jersey.png</a></td>
+        <td><pre></pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/products/training-jersey">https://store.punjabkingsipl.in/products/training-jersey</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-products-training-jersey.png">screenshots/store-punjabkingsipl-in-products-training-jersey.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>3 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/products/training-jersey">https://store.punjabkingsipl.in/products/training-jersey</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-products-training-jersey.png">screenshots/store-punjabkingsipl-in-products-training-jersey.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/pbks-varsity-jacket-17632075">https://store.punjabkingsipl.in/product/pbks-varsity-jacket-17632075</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-pbks-varsity-jacket-17632075.png">screenshots/store-punjabkingsipl-in-product-pbks-varsity-jacket-17632075.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>10 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/pbks-varsity-jacket-17632075">https://store.punjabkingsipl.in/product/pbks-varsity-jacket-17632075</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-pbks-varsity-jacket-17632075.png">screenshots/store-punjabkingsipl-in-product-pbks-varsity-jacket-17632075.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/pbks-fan-jersey-17632066">https://store.punjabkingsipl.in/product/pbks-fan-jersey-17632066</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-pbks-fan-jersey-17632066.png">screenshots/store-punjabkingsipl-in-product-pbks-fan-jersey-17632066.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>10 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/pbks-fan-jersey-17632066">https://store.punjabkingsipl.in/product/pbks-fan-jersey-17632066</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-pbks-fan-jersey-17632066.png">screenshots/store-punjabkingsipl-in-product-pbks-fan-jersey-17632066.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/punjab-kings-collegiate-varsity-jacket-17632079">https://store.punjabkingsipl.in/product/punjab-kings-collegiate-varsity-jacket-17632079</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-punjab-kings-collegiate-varsity-jacket-17632079.png">screenshots/store-punjabkingsipl-in-product-punjab-kings-collegiate-varsity-jacket-17632079.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>10 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/punjab-kings-collegiate-varsity-jacket-17632079">https://store.punjabkingsipl.in/product/punjab-kings-collegiate-varsity-jacket-17632079</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-punjab-kings-collegiate-varsity-jacket-17632079.png">screenshots/store-punjabkingsipl-in-product-punjab-kings-collegiate-varsity-jacket-17632079.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/punjab-kings-fan-jersey-2025-17632065">https://store.punjabkingsipl.in/product/punjab-kings-fan-jersey-2025-17632065</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-punjab-kings-fan-jersey-2025-17632065.png">screenshots/store-punjabkingsipl-in-product-punjab-kings-fan-jersey-2025-17632065.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>10 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/punjab-kings-fan-jersey-2025-17632065">https://store.punjabkingsipl.in/product/punjab-kings-fan-jersey-2025-17632065</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-punjab-kings-fan-jersey-2025-17632065.png">screenshots/store-punjabkingsipl-in-product-punjab-kings-fan-jersey-2025-17632065.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>4 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/punjab-kings-casual-t-shirt-white-17632076">https://store.punjabkingsipl.in/product/punjab-kings-casual-t-shirt-white-17632076</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-punjab-kings-casual-t-shirt-white-17632076.png">screenshots/store-punjabkingsipl-in-product-punjab-kings-casual-t-shirt-white-17632076.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+image https://store.punjabkingsipl.in/assets/images/placeholder19x6.png :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>10 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/punjab-kings-casual-t-shirt-white-17632076">https://store.punjabkingsipl.in/product/punjab-kings-casual-t-shirt-white-17632076</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-punjab-kings-casual-t-shirt-white-17632076.png">screenshots/store-punjabkingsipl-in-product-punjab-kings-casual-t-shirt-white-17632076.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/sadda-punjab-t-shirt-17632064">https://store.punjabkingsipl.in/product/sadda-punjab-t-shirt-17632064</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-sadda-punjab-t-shirt-17632064.png">screenshots/store-punjabkingsipl-in-product-sadda-punjab-t-shirt-17632064.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>10 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/sadda-punjab-t-shirt-17632064">https://store.punjabkingsipl.in/product/sadda-punjab-t-shirt-17632064</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-sadda-punjab-t-shirt-17632064.png">screenshots/store-punjabkingsipl-in-product-sadda-punjab-t-shirt-17632064.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/punjab-kings-auction-polo-blue-17632067">https://store.punjabkingsipl.in/product/punjab-kings-auction-polo-blue-17632067</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-punjab-kings-auction-polo-blue-17632067.png">screenshots/store-punjabkingsipl-in-product-punjab-kings-auction-polo-blue-17632067.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>10 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/punjab-kings-auction-polo-blue-17632067">https://store.punjabkingsipl.in/product/punjab-kings-auction-polo-blue-17632067</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-punjab-kings-auction-polo-blue-17632067.png">screenshots/store-punjabkingsipl-in-product-punjab-kings-auction-polo-blue-17632067.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/pbks-track-jacket-17632068">https://store.punjabkingsipl.in/product/pbks-track-jacket-17632068</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-pbks-track-jacket-17632068.png">screenshots/store-punjabkingsipl-in-product-pbks-track-jacket-17632068.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>10 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/pbks-track-jacket-17632068">https://store.punjabkingsipl.in/product/pbks-track-jacket-17632068</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-pbks-track-jacket-17632068.png">screenshots/store-punjabkingsipl-in-product-pbks-track-jacket-17632068.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/punjab-kings-auction-polo-red-17632069">https://store.punjabkingsipl.in/product/punjab-kings-auction-polo-red-17632069</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-punjab-kings-auction-polo-red-17632069.png">screenshots/store-punjabkingsipl-in-product-punjab-kings-auction-polo-red-17632069.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>10 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/punjab-kings-auction-polo-red-17632069">https://store.punjabkingsipl.in/product/punjab-kings-auction-polo-red-17632069</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-punjab-kings-auction-polo-red-17632069.png">screenshots/store-punjabkingsipl-in-product-punjab-kings-auction-polo-red-17632069.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/pbks-roar-t-shirt-17632070">https://store.punjabkingsipl.in/product/pbks-roar-t-shirt-17632070</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-pbks-roar-t-shirt-17632070.png">screenshots/store-punjabkingsipl-in-product-pbks-roar-t-shirt-17632070.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>10 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/pbks-roar-t-shirt-17632070">https://store.punjabkingsipl.in/product/pbks-roar-t-shirt-17632070</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-pbks-roar-t-shirt-17632070.png">screenshots/store-punjabkingsipl-in-product-pbks-roar-t-shirt-17632070.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/punjab-kings-formal-shirt-17632071">https://store.punjabkingsipl.in/product/punjab-kings-formal-shirt-17632071</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-punjab-kings-formal-shirt-17632071.png">screenshots/store-punjabkingsipl-in-product-punjab-kings-formal-shirt-17632071.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>10 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/punjab-kings-formal-shirt-17632071">https://store.punjabkingsipl.in/product/punjab-kings-formal-shirt-17632071</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-punjab-kings-formal-shirt-17632071.png">screenshots/store-punjabkingsipl-in-product-punjab-kings-formal-shirt-17632071.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/punjab-kings-crest-tee-17632072">https://store.punjabkingsipl.in/product/punjab-kings-crest-tee-17632072</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-punjab-kings-crest-tee-17632072.png">screenshots/store-punjabkingsipl-in-product-punjab-kings-crest-tee-17632072.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>10 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/punjab-kings-crest-tee-17632072">https://store.punjabkingsipl.in/product/punjab-kings-crest-tee-17632072</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-punjab-kings-crest-tee-17632072.png">screenshots/store-punjabkingsipl-in-product-punjab-kings-crest-tee-17632072.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/collection/women">https://store.punjabkingsipl.in/collection/women</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-collection-women.png">screenshots/store-punjabkingsipl-in-collection-women.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>3 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/collection/women">https://store.punjabkingsipl.in/collection/women</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-collection-women.png">screenshots/store-punjabkingsipl-in-collection-women.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>3 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/collection/kids">https://store.punjabkingsipl.in/collection/kids</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-collection-kids.png">screenshots/store-punjabkingsipl-in-collection-kids.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>3 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/collection/kids">https://store.punjabkingsipl.in/collection/kids</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-collection-kids.png">screenshots/store-punjabkingsipl-in-collection-kids.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure</td>
+        <td>4 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/collection/training-jersey">https://store.punjabkingsipl.in/collection/training-jersey</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-collection-training-jersey.png">screenshots/store-punjabkingsipl-in-collection-training-jersey.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+image https://store.punjabkingsipl.in/assets/images/placeholder19x6.png :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error</td>
+        <td>3 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/collection/training-jersey">https://store.punjabkingsipl.in/collection/training-jersey</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in-collection-training-jersey.png">screenshots/store-punjabkingsipl-in-collection-training-jersey.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure (mobile)</td>
+        <td>7 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/">https://store.punjabkingsipl.in/</a></td>
+        <td><a href="screenshots-mobile/store-punjabkingsipl-in-mobile.png">screenshots-mobile/store-punjabkingsipl-in-mobile.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+image https://store.punjabkingsipl.in/assets/images/placeholder4x5.png :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/api/service/application/graphql/ :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/api/service/application/graphql/ :: net::ERR_ABORTED
+image https://store.punjabkingsipl.in/assets/images/placeholder4x5.png :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error (mobile)</td>
+        <td>5 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/">https://store.punjabkingsipl.in/</a></td>
+        <td><a href="screenshots-mobile/store-punjabkingsipl-in-mobile.png">screenshots-mobile/store-punjabkingsipl-in-mobile.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure (mobile)</td>
+        <td>6 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/products">https://store.punjabkingsipl.in/products</a></td>
+        <td><a href="screenshots-mobile/store-punjabkingsipl-in-products-mobile.png">screenshots-mobile/store-punjabkingsipl-in-products-mobile.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/api/service/application/graphql/ :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/api/service/application/graphql/ :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/api/service/application/graphql/ :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error (mobile)</td>
+        <td>2 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/products">https://store.punjabkingsipl.in/products</a></td>
+        <td><a href="screenshots-mobile/store-punjabkingsipl-in-products-mobile.png">screenshots-mobile/store-punjabkingsipl-in-products-mobile.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Request failure (mobile)</td>
+        <td>8 same-origin request(s) failed while loading the page.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/pbks-varsity-jacket-17632075">https://store.punjabkingsipl.in/product/pbks-varsity-jacket-17632075</a></td>
+        <td><a href="screenshots-mobile/store-punjabkingsipl-in-product-pbks-varsity-jacket-17632075-mobile.png">screenshots-mobile/store-punjabkingsipl-in-product-pbks-varsity-jacket-17632075-mobile.png</a></td>
+        <td><pre>fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/api/service/application/graphql/ :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/api/service/application/graphql/ :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/api/service/application/graphql/ :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/api/service/application/graphql/ :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/api/service/application/graphql/ :: net::ERR_ABORTED
+fetch https://store.punjabkingsipl.in/files/service-worker.js :: net::ERR_ABORTED</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>JavaScript error (mobile)</td>
+        <td>10 uncaught page error(s) fired while rendering.</td>
+        <td><a href="https://store.punjabkingsipl.in/product/pbks-varsity-jacket-17632075">https://store.punjabkingsipl.in/product/pbks-varsity-jacket-17632075</a></td>
+        <td><a href="screenshots-mobile/store-punjabkingsipl-in-product-pbks-varsity-jacket-17632075-mobile.png">screenshots-mobile/store-punjabkingsipl-in-product-pbks-varsity-jacket-17632075-mobile.png</a></td>
+        <td><pre>Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #421; visit https://reactjs.org/docs/error-decoder.html?invariant=421 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #418; visit https://reactjs.org/docs/error-decoder.html?invariant=418 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+Minified React error #422; visit https://reactjs.org/docs/error-decoder.html?invariant=422 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.</pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Cross-domain navigation</td>
+        <td>Store navigation exposes linked pages on a different domain, which creates a brand and session consistency risk.</td>
+        <td><a href="https://punjab-kings.fynd.io/products">https://punjab-kings.fynd.io/products</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in.png">screenshots/store-punjabkingsipl-in.png</a></td>
+        <td><pre></pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Cross-domain navigation</td>
+        <td>Store navigation exposes linked pages on a different domain, which creates a brand and session consistency risk.</td>
+        <td><a href="https://punjab-kings.fynd.io/collection/men">https://punjab-kings.fynd.io/collection/men</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in.png">screenshots/store-punjabkingsipl-in.png</a></td>
+        <td><pre></pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Cross-domain navigation</td>
+        <td>Store navigation exposes linked pages on a different domain, which creates a brand and session consistency risk.</td>
+        <td><a href="https://punjab-kings.fynd.io/collection/women">https://punjab-kings.fynd.io/collection/women</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in.png">screenshots/store-punjabkingsipl-in.png</a></td>
+        <td><pre></pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Cross-domain navigation</td>
+        <td>Store navigation exposes linked pages on a different domain, which creates a brand and session consistency risk.</td>
+        <td><a href="https://punjab-kings.fynd.io/collection/kids">https://punjab-kings.fynd.io/collection/kids</a></td>
+        <td><a href="screenshots/store-punjabkingsipl-in.png">screenshots/store-punjabkingsipl-in.png</a></td>
+        <td><pre></pre></td>
+      </tr>
+
+      <tr>
+        <td>medium</td>
+        <td>Cart UX</td>
+        <td>Could not find a visible remove or decrement control in the cart flow.</td>
+        <td><a href="https://store.punjabkingsipl.in/cart/bag">https://store.punjabkingsipl.in/cart/bag</a></td>
+        <td><a href="screenshots/flow-cart-open.png">screenshots/flow-cart-open.png</a></td>
+        <td><pre></pre></td>
+      </tr>
+
+      <tr>
+        <td>high</td>
+        <td>Checkout entry</td>
+        <td>Checkout CTA was not visible in the cart after adding a product.</td>
+        <td><a href="https://store.punjabkingsipl.in/cart/bag">https://store.punjabkingsipl.in/cart/bag</a></td>
+        <td><a href="screenshots/flow-cart-open.png">screenshots/flow-cart-open.png</a></td>
+        <td><pre></pre></td>
+      </tr></tbody>
+  </table>
+
+  <h2>Cart Flow</h2>
+  <table>
+    <thead><tr><th>Step</th><th>Status</th><th>Details</th></tr></thead>
+    <tbody><tr><td>Open product detail page</td><td>passed</td><td>https://store.punjabkingsipl.in/product/pbks-varsity-jacket-17632075</td></tr>
+<tr><td>Select available size</td><td>passed</td><td></td></tr>
+<tr><td>Add product to cart</td><td>passed</td><td></td></tr>
+<tr><td>Open cart</td><td>passed</td><td>https://store.punjabkingsipl.in/cart/bag</td></tr>
+<tr><td>Increase quantity in cart</td><td>not_covered</td><td>Quantity increment control was not visible.</td></tr>
+<tr><td>Remove item from cart</td><td>not_covered</td><td>No visible remove/decrement control found.</td></tr>
+<tr><td>Checkout entry point visible</td><td>failed</td><td>Checkout CTA was not visible in cart.</td></tr></tbody>
+  </table>
+  <ul><li><a href="screenshots/flow-product-page.png">screenshots/flow-product-page.png</a></li>
+<li><a href="screenshots/flow-after-add-to-cart.png">screenshots/flow-after-add-to-cart.png</a></li>
+<li><a href="screenshots/flow-cart-open.png">screenshots/flow-cart-open.png</a></li></ul>
+
+  <h2>Page Coverage</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Page</th>
+        <th>Status</th>
+        <th>Title</th>
+        <th>Body Length</th>
+        <th>Issue Count</th>
+        <th>Screenshot</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/">https://store.punjabkingsipl.in/</a></td>
+        <td>200</td>
+        <td>Punjab Kings - Official Online Store</td>
+        <td>498</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in.png">screenshots/store-punjabkingsipl-in.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/products">https://store.punjabkingsipl.in/products</a></td>
+        <td>200</td>
+        <td>Product Listing | Punjab Kings</td>
+        <td>1405</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-products.png">screenshots/store-punjabkingsipl-in-products.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/categories">https://store.punjabkingsipl.in/categories</a></td>
+        <td>200</td>
+        <td>Categories | Punjab Kings</td>
+        <td>353</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-categories.png">screenshots/store-punjabkingsipl-in-categories.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/collections">https://store.punjabkingsipl.in/collections</a></td>
+        <td>200</td>
+        <td>Collections | Punjab Kings</td>
+        <td>341</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-collections.png">screenshots/store-punjabkingsipl-in-collections.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/brands">https://store.punjabkingsipl.in/brands</a></td>
+        <td>200</td>
+        <td>Brands | Punjab Kings</td>
+        <td>318</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-brands.png">screenshots/store-punjabkingsipl-in-brands.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/collection">https://store.punjabkingsipl.in/collection</a></td>
+        <td>404</td>
+        <td>Fynd Storefront</td>
+        <td>291</td>
+        <td>3</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-collection.png">screenshots/store-punjabkingsipl-in-collection.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/collection/men">https://store.punjabkingsipl.in/collection/men</a></td>
+        <td>200</td>
+        <td>Punjab Kings Merch: Men's Collection for Punjab Fans | Punjab Kings</td>
+        <td>1417</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-collection-men.png">screenshots/store-punjabkingsipl-in-collection-men.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/order-tracking">https://store.punjabkingsipl.in/order-tracking</a></td>
+        <td>200</td>
+        <td>Track Order | Punjab Kings</td>
+        <td>368</td>
+        <td>1</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-order-tracking.png">screenshots/store-punjabkingsipl-in-order-tracking.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/contact-us">https://store.punjabkingsipl.in/contact-us</a></td>
+        <td>200</td>
+        <td>Contact Us | Punjab Kings</td>
+        <td>321</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-contact-us.png">screenshots/store-punjabkingsipl-in-contact-us.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/about-us">https://store.punjabkingsipl.in/about-us</a></td>
+        <td>200</td>
+        <td>About Us | Punjab Kings</td>
+        <td>2274</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-about-us.png">screenshots/store-punjabkingsipl-in-about-us.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/privacy-policy">https://store.punjabkingsipl.in/privacy-policy</a></td>
+        <td>200</td>
+        <td>Privacy Policy | Punjab Kings</td>
+        <td>11837</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-privacy-policy.png">screenshots/store-punjabkingsipl-in-privacy-policy.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/shipping-policy">https://store.punjabkingsipl.in/shipping-policy</a></td>
+        <td>200</td>
+        <td>Shipping &amp; Delivery Policy | Punjab Kings</td>
+        <td>8845</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-shipping-policy.png">screenshots/store-punjabkingsipl-in-shipping-policy.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/return-policy">https://store.punjabkingsipl.in/return-policy</a></td>
+        <td>200</td>
+        <td>Returns &amp; Cancellation Policy | Punjab Kings</td>
+        <td>7617</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-return-policy.png">screenshots/store-punjabkingsipl-in-return-policy.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/terms-and-conditions">https://store.punjabkingsipl.in/terms-and-conditions</a></td>
+        <td>200</td>
+        <td>Terms &amp; Conditions | Punjab Kings</td>
+        <td>18208</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-terms-and-conditions.png">screenshots/store-punjabkingsipl-in-terms-and-conditions.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/products/match-jersey">https://store.punjabkingsipl.in/products/match-jersey</a></td>
+        <td>404</td>
+        <td>Fynd Storefront</td>
+        <td>291</td>
+        <td>3</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-products-match-jersey.png">screenshots/store-punjabkingsipl-in-products-match-jersey.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/products/training-jersey">https://store.punjabkingsipl.in/products/training-jersey</a></td>
+        <td>404</td>
+        <td>Fynd Storefront</td>
+        <td>291</td>
+        <td>3</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-products-training-jersey.png">screenshots/store-punjabkingsipl-in-products-training-jersey.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/product/pbks-varsity-jacket-17632075">https://store.punjabkingsipl.in/product/pbks-varsity-jacket-17632075</a></td>
+        <td>200</td>
+        <td>PBKS Varsity Jacket | Punjab Kings</td>
+        <td>1094</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-pbks-varsity-jacket-17632075.png">screenshots/store-punjabkingsipl-in-product-pbks-varsity-jacket-17632075.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/product/pbks-fan-jersey-17632066">https://store.punjabkingsipl.in/product/pbks-fan-jersey-17632066</a></td>
+        <td>200</td>
+        <td>PBKS Fan Jersey | Punjab Kings</td>
+        <td>602</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-pbks-fan-jersey-17632066.png">screenshots/store-punjabkingsipl-in-product-pbks-fan-jersey-17632066.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/product/punjab-kings-collegiate-varsity-jacket-17632079">https://store.punjabkingsipl.in/product/punjab-kings-collegiate-varsity-jacket-17632079</a></td>
+        <td>200</td>
+        <td>Punjab Kings Collegiate Varsity Jacket | Punjab Kings</td>
+        <td>652</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-punjab-kings-collegiate-varsity-jacket-17632079.png">screenshots/store-punjabkingsipl-in-product-punjab-kings-collegiate-varsity-jacket-17632079.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/product/punjab-kings-fan-jersey-2025-17632065">https://store.punjabkingsipl.in/product/punjab-kings-fan-jersey-2025-17632065</a></td>
+        <td>200</td>
+        <td>Punjab Kings Fan Jersey 2025 | Punjab Kings</td>
+        <td>629</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-punjab-kings-fan-jersey-2025-17632065.png">screenshots/store-punjabkingsipl-in-product-punjab-kings-fan-jersey-2025-17632065.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/product/punjab-kings-casual-t-shirt-white-17632076">https://store.punjabkingsipl.in/product/punjab-kings-casual-t-shirt-white-17632076</a></td>
+        <td>200</td>
+        <td>Punjab Kings Casual T-Shirt White | Punjab Kings</td>
+        <td>637</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-punjab-kings-casual-t-shirt-white-17632076.png">screenshots/store-punjabkingsipl-in-product-punjab-kings-casual-t-shirt-white-17632076.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/product/sadda-punjab-t-shirt-17632064">https://store.punjabkingsipl.in/product/sadda-punjab-t-shirt-17632064</a></td>
+        <td>200</td>
+        <td>Sadda Punjab T-Shirt | Punjab Kings</td>
+        <td>613</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-sadda-punjab-t-shirt-17632064.png">screenshots/store-punjabkingsipl-in-product-sadda-punjab-t-shirt-17632064.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/product/punjab-kings-auction-polo-blue-17632067">https://store.punjabkingsipl.in/product/punjab-kings-auction-polo-blue-17632067</a></td>
+        <td>200</td>
+        <td>Punjab Kings Auction Polo Blue | Punjab Kings</td>
+        <td>636</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-punjab-kings-auction-polo-blue-17632067.png">screenshots/store-punjabkingsipl-in-product-punjab-kings-auction-polo-blue-17632067.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/product/pbks-track-jacket-17632068">https://store.punjabkingsipl.in/product/pbks-track-jacket-17632068</a></td>
+        <td>200</td>
+        <td>PBKS Track Jacket | Punjab Kings</td>
+        <td>771</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-pbks-track-jacket-17632068.png">screenshots/store-punjabkingsipl-in-product-pbks-track-jacket-17632068.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/product/punjab-kings-auction-polo-red-17632069">https://store.punjabkingsipl.in/product/punjab-kings-auction-polo-red-17632069</a></td>
+        <td>200</td>
+        <td>Punjab Kings Auction Polo Red | Punjab Kings</td>
+        <td>633</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-punjab-kings-auction-polo-red-17632069.png">screenshots/store-punjabkingsipl-in-product-punjab-kings-auction-polo-red-17632069.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/product/pbks-roar-t-shirt-17632070">https://store.punjabkingsipl.in/product/pbks-roar-t-shirt-17632070</a></td>
+        <td>200</td>
+        <td>PBKS Roar T-Shirt | Punjab Kings</td>
+        <td>607</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-pbks-roar-t-shirt-17632070.png">screenshots/store-punjabkingsipl-in-product-pbks-roar-t-shirt-17632070.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/product/punjab-kings-formal-shirt-17632071">https://store.punjabkingsipl.in/product/punjab-kings-formal-shirt-17632071</a></td>
+        <td>200</td>
+        <td>Punjab Kings Formal Shirt | Punjab Kings</td>
+        <td>624</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-punjab-kings-formal-shirt-17632071.png">screenshots/store-punjabkingsipl-in-product-punjab-kings-formal-shirt-17632071.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/product/punjab-kings-crest-tee-17632072">https://store.punjabkingsipl.in/product/punjab-kings-crest-tee-17632072</a></td>
+        <td>200</td>
+        <td>Punjab Kings Crest Tee | Punjab Kings</td>
+        <td>618</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-product-punjab-kings-crest-tee-17632072.png">screenshots/store-punjabkingsipl-in-product-punjab-kings-crest-tee-17632072.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/collection/women">https://store.punjabkingsipl.in/collection/women</a></td>
+        <td>200</td>
+        <td>Punjab Kings Women: Official Merchandise Available Now | Punjab Kings</td>
+        <td>1423</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-collection-women.png">screenshots/store-punjabkingsipl-in-collection-women.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/collection/kids">https://store.punjabkingsipl.in/collection/kids</a></td>
+        <td>200</td>
+        <td>Punjab Kings Kids Fan Jersey | IPL Match Jersey Collection | Punjab Kings</td>
+        <td>1399</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-collection-kids.png">screenshots/store-punjabkingsipl-in-collection-kids.png</a></td>
+      </tr>
+
+      <tr>
+        <td><a href="https://store.punjabkingsipl.in/collection/training-jersey">https://store.punjabkingsipl.in/collection/training-jersey</a></td>
+        <td>200</td>
+        <td>Punjab Kings IPL Training Jersey - Match Practice Gear | Punjab Kings</td>
+        <td>1432</td>
+        <td>2</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-collection-training-jersey.png">screenshots/store-punjabkingsipl-in-collection-training-jersey.png</a></td>
+      </tr></tbody>
+  </table>
+</body>
+</html>

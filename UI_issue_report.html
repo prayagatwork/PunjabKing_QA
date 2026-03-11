@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Punjab Kings Store UI Issue Report</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 24px;
+      color: #1f1f1f;
+      line-height: 1.45;
+    }
+    h1, h2 {
+      margin-bottom: 8px;
+    }
+    .meta {
+      margin-bottom: 24px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+    }
+    th, td {
+      border: 1px solid #d9d9d9;
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f5f5f5;
+    }
+    .note {
+      background: #fafafa;
+      border: 1px solid #e5e5e5;
+      padding: 12px;
+      margin-bottom: 24px;
+    }
+    code {
+      background: #f2f2f2;
+      padding: 1px 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Punjab Kings Store UI Issue Report</h1>
+  <div class="meta">
+    <p><strong>Date:</strong> 2026-03-11</p>
+    <p><strong>Base URL:</strong> <a href="https://store.punjabkingsipl.in/">https://store.punjabkingsipl.in/</a></p>
+    <p><strong>Focus:</strong> UI alignment, formatting, wording, and spelling/copy issues.</p>
+  </div>
+
+  <div class="note">
+    Reviewed pages included the home page, products listing, brands, order tracking, about us, contact us, one representative product detail page, and mobile checks for the home page and PDP. No major spelling errors were observed on the About Us, Contact Us, Privacy Policy, Shipping Policy, Return Policy, or Terms pages during this pass, but the issues below were visible and reproducible in the current UI.
+  </div>
+
+  <h2>Findings</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Severity</th>
+        <th>Type</th>
+        <th>URL</th>
+        <th>Issue</th>
+        <th>Recommendation</th>
+        <th>Evidence</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>High</td>
+        <td>Copy / English</td>
+        <td><a href="https://store.punjabkingsipl.in/order-tracking">/order-tracking</a></td>
+        <td>The heading reads <code>Where is Order Id?</code>, which is awkward English and inconsistent capitalization. The same phrase is repeated again under the CTA, making the page feel unfinished.</td>
+        <td>Change the primary copy to something clearer such as <code>Where is your order ID?</code> or <code>Track your order</code>, and remove the duplicate line below the button.</td>
+        <td><a href="screenshots/ui-order-tracking-page.png">ui-order-tracking-page.png</a></td>
+      </tr>
+      <tr>
+        <td>Medium</td>
+        <td>Copy / Grammar</td>
+        <td><a href="https://store.punjabkingsipl.in/product/pbks-varsity-jacket-17632075">/product/pbks-varsity-jacket-17632075</a></td>
+        <td>The pricing helper text says <code>Price inclusive of all tax</code>. That is grammatically incorrect.</td>
+        <td>Replace it with <code>Price inclusive of all taxes</code>.</td>
+        <td><a href="screenshots/ui-pdp-tax-copy.png">ui-pdp-tax-copy.png</a></td>
+      </tr>
+      <tr>
+        <td>Medium</td>
+        <td>Copy / Taxonomy leak</td>
+        <td><a href="https://store.punjabkingsipl.in/products">/products</a></td>
+        <td>The filter rail exposes unclear or internal-looking labels such as <code>Size Depth</code>, <code>L1 Category</code>, and <code>L2 Category</code>. These do not read like customer-facing filter names.</td>
+        <td>Rename these filters to business-friendly labels or hide them if they are internal taxonomy fields.</td>
+        <td>
+          <a href="screenshots/ui-products-filter-size-depth.png">ui-products-filter-size-depth.png</a><br>
+          <a href="screenshots/ui-products-filter-l1-category.png">ui-products-filter-l1-category.png</a><br>
+          <a href="screenshots/ui-products-filter-l2-category.png">ui-products-filter-l2-category.png</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Medium</td>
+        <td>Responsive UI / Readability</td>
+        <td><a href="https://store.punjabkingsipl.in/">/</a> (mobile)</td>
+        <td>On the mobile home page, the footer links and legal text render very small and feel cramped. They are readable only with effort and do not look properly spaced for a production mobile footer.</td>
+        <td>Increase footer font size and vertical spacing on mobile, and make link groups easier to scan and tap.</td>
+        <td><a href="screenshots-mobile/store-punjabkingsipl-in-mobile.png">store-punjabkingsipl-in-mobile.png</a></td>
+      </tr>
+      <tr>
+        <td>Low</td>
+        <td>Layout / Alignment</td>
+        <td><a href="https://store.punjabkingsipl.in/brands">/brands</a></td>
+        <td>The Brands page looks visually incomplete: a single oversized logo/card is pinned to the left while most of the page remains empty. The content does not feel centered or balanced relative to the available canvas.</td>
+        <td>Rework the page grid so a single-brand state still feels intentional, or use a narrower content container and centered alignment.</td>
+        <td><a href="screenshots/store-punjabkingsipl-in-brands.png">store-punjabkingsipl-in-brands.png</a></td>
+      </tr>
+      <tr>
+        <td>Low</td>
+        <td>Layout / Visual balance</td>
+        <td><a href="https://store.punjabkingsipl.in/order-tracking">/order-tracking</a></td>
+        <td>The order-tracking module occupies a small area near the top of the page, leaving a large empty content gap before the footer. The page looks under-designed and visually unbalanced.</td>
+        <td>Increase useful supporting content or tighten the page height so the form feels intentionally placed rather than floating in empty space.</td>
+        <td><a href="screenshots/ui-order-tracking-page.png">ui-order-tracking-page.png</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Pages Reviewed</h2>
+  <ul>
+    <li><a href="https://store.punjabkingsipl.in/">Home</a></li>
+    <li><a href="https://store.punjabkingsipl.in/products">Products</a></li>
+    <li><a href="https://store.punjabkingsipl.in/brands">Brands</a></li>
+    <li><a href="https://store.punjabkingsipl.in/order-tracking">Order Tracking</a></li>
+    <li><a href="https://store.punjabkingsipl.in/contact-us">Contact Us</a></li>
+    <li><a href="https://store.punjabkingsipl.in/about-us">About Us</a></li>
+    <li><a href="https://store.punjabkingsipl.in/product/pbks-varsity-jacket-17632075">Representative PDP</a></li>
+  </ul>
+</body>
+</html>
