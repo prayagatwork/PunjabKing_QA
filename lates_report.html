@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Punjab Kings Latest QA Report</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; color: #1f1f1f; line-height: 1.45; }
+    h1, h2 { margin-bottom: 8px; }
+    .meta, .note { margin-bottom: 20px; }
+    .note { background: #fafafa; border: 1px solid #e5e5e5; padding: 12px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+    th, td { border: 1px solid #d9d9d9; padding: 10px; text-align: left; vertical-align: top; }
+    th { background: #f5f5f5; }
+    .pass { color: #0b7a2a; font-weight: 700; }
+    .fail { color: #b42318; font-weight: 700; }
+    .partial { color: #8a5b00; font-weight: 700; }
+    .blocked { color: #8a5b00; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <h1>Punjab Kings Latest QA Report</h1>
+  <div class="meta">
+    <p><strong>Date:</strong> Wed Mar 11 2026 14:47:16 GMT+0530 (India Standard Time)</p>
+    <p><strong>Base URL:</strong> <a href="https://store.punjabkingsipl.in/">https://store.punjabkingsipl.in/</a></p>
+    <p><strong>Report file:</strong> <code>lates_report.html</code></p>
+  </div>
+
+  <div class="note">
+    This report is a fresh rerun against the current state of the site after recent changes. It consolidates the earlier UI, navigation, responsive, login, wishlist, sorting, filtering, cart, and form-validation checks into one current-state snapshot.
+  </div>
+
+  <h2>Latest Issues</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Severity</th>
+        <th>Area</th>
+        <th>URL</th>
+        <th>Issue</th>
+        <th>Evidence</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>High</td>
+        <td>Navigation</td>
+        <td><a href="https://store.punjabkingsipl.in/collection">https://store.punjabkingsipl.in/collection</a></td>
+        <td>Collection Landing page is broken or blank.</td>
+        <td><a href="screenshots/latest-nav-collection-landing.png">screenshots/latest-nav-collection-landing.png</a></td>
+        <td>HTTP status: 404</td>
+      </tr>
+<tr>
+        <td>High</td>
+        <td>Navigation</td>
+        <td><a href="https://store.punjabkingsipl.in/products/match-jersey">https://store.punjabkingsipl.in/products/match-jersey</a></td>
+        <td>Match Jersey CTA page is broken or blank.</td>
+        <td><a href="screenshots/latest-nav-match-jersey-cta.png">screenshots/latest-nav-match-jersey-cta.png</a></td>
+        <td>HTTP status: 404</td>
+      </tr>
+<tr>
+        <td>High</td>
+        <td>Navigation</td>
+        <td><a href="https://store.punjabkingsipl.in/products/training-jersey">https://store.punjabkingsipl.in/products/training-jersey</a></td>
+        <td>Training Jersey CTA page is broken or blank.</td>
+        <td><a href="screenshots/latest-nav-training-jersey-cta.png">screenshots/latest-nav-training-jersey-cta.png</a></td>
+        <td>HTTP status: 404</td>
+      </tr>
+<tr>
+        <td>Medium</td>
+        <td>UI Copy</td>
+        <td><a href="https://store.punjabkingsipl.in/products">https://store.punjabkingsipl.in/products</a></td>
+        <td>PLP exposes internal filter labels to users.</td>
+        <td><a href="screenshots/latest-ui-products-filter-labels.png">screenshots/latest-ui-products-filter-labels.png</a></td>
+        <td></td>
+      </tr>
+<tr>
+        <td>Medium</td>
+        <td>UI Copy</td>
+        <td><a href="https://store.punjabkingsipl.in/order-tracking">https://store.punjabkingsipl.in/order-tracking</a></td>
+        <td>Order tracking heading still uses awkward English.</td>
+        <td><a href="screenshots/latest-ui-order-tracking-copy-latest.png">screenshots/latest-ui-order-tracking-copy-latest.png</a></td>
+        <td></td>
+      </tr>
+<tr>
+        <td>Low</td>
+        <td>UI Copy</td>
+        <td><a href="https://store.punjabkingsipl.in/product/pbks-varsity-jacket-17632075">https://store.punjabkingsipl.in/product/pbks-varsity-jacket-17632075</a></td>
+        <td>PDP helper text still contains copy/spacing defects.</td>
+        <td><a href="screenshots/latest-ui-pdp-copy-latest.png">screenshots/latest-ui-pdp-copy-latest.png</a></td>
+        <td></td>
+      </tr>
+<tr>
+        <td>Medium</td>
+        <td>PLP Quick Add</td>
+        <td><a href="https://store.punjabkingsipl.in/products">https://store.punjabkingsipl.in/products</a></td>
+        <td>PLP Add to Cart behaves like a quick-buy expansion rather than a direct add.</td>
+        <td><a href="screenshots/latest-functional-plp-quick-add-latest.png">screenshots/latest-functional-plp-quick-add-latest.png</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Navigation Sanity</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Page</th>
+        <th>URL</th>
+        <th>Status</th>
+        <th>Notes</th>
+        <th>Evidence</th>
+      </tr>
+    </thead>
+    <tbody><tr>
+        <td>Home</td>
+        <td><a href="https://store.punjabkingsipl.in/">https://store.punjabkingsipl.in/</a></td>
+        <td><span class="pass">Pass</span></td>
+        <td>Loaded successfully.</td>
+        <td><a href="screenshots/latest-nav-home.png">screenshots/latest-nav-home.png</a></td>
+      </tr>
+<tr>
+        <td>Products</td>
+        <td><a href="https://store.punjabkingsipl.in/products">https://store.punjabkingsipl.in/products</a></td>
+        <td><span class="pass">Pass</span></td>
+        <td>Loaded successfully.</td>
+        <td><a href="screenshots/latest-nav-products.png">screenshots/latest-nav-products.png</a></td>
+      </tr>
+<tr>
+        <td>Categories</td>
+        <td><a href="https://store.punjabkingsipl.in/categories">https://store.punjabkingsipl.in/categories</a></td>
+        <td><span class="pass">Pass</span></td>
+        <td>Loaded successfully.</td>
+        <td><a href="screenshots/latest-nav-categories.png">screenshots/latest-nav-categories.png</a></td>
+      </tr>
+<tr>
+        <td>Collections</td>
+        <td><a href="https://store.punjabkingsipl.in/collections">https://store.punjabkingsipl.in/collections</a></td>
+        <td><span class="pass">Pass</span></td>
+        <td>Loaded successfully.</td>
+        <td><a href="screenshots/latest-nav-collections.png">screenshots/latest-nav-collections.png</a></td>
+      </tr>
+<tr>
+        <td>Brands</td>
+        <td><a href="https://store.punjabkingsipl.in/brands">https://store.punjabkingsipl.in/brands</a></td>
+        <td><span class="pass">Pass</span></td>
+        <td>Loaded successfully.</td>
+        <td><a href="screenshots/latest-nav-brands.png">screenshots/latest-nav-brands.png</a></td>
+      </tr>
+<tr>
+        <td>About Us</td>
+        <td><a href="https://store.punjabkingsipl.in/about-us">https://store.punjabkingsipl.in/about-us</a></td>
+        <td><span class="pass">Pass</span></td>
+        <td>Loaded successfully.</td>
+        <td><a href="screenshots/latest-nav-about-us.png">screenshots/latest-nav-about-us.png</a></td>
+      </tr>
+<tr>
+        <td>Contact Us</td>
+        <td><a href="https://store.punjabkingsipl.in/contact-us">https://store.punjabkingsipl.in/contact-us</a></td>
+        <td><span class="pass">Pass</span></td>
+        <td>Loaded successfully.</td>
+        <td><a href="screenshots/latest-nav-contact-us.png">screenshots/latest-nav-contact-us.png</a></td>
+      </tr>
+<tr>
+        <td>Order Tracking</td>
+        <td><a href="https://store.punjabkingsipl.in/order-tracking">https://store.punjabkingsipl.in/order-tracking</a></td>
+        <td><span class="pass">Pass</span></td>
+        <td>Loaded successfully.</td>
+        <td><a href="screenshots/latest-nav-order-tracking.png">screenshots/latest-nav-order-tracking.png</a></td>
+      </tr>
+<tr>
+        <td>Privacy Policy</td>
+        <td><a href="https://store.punjabkingsipl.in/privacy-policy">https://store.punjabkingsipl.in/privacy-policy</a></td>
+        <td><span class="pass">Pass</span></td>
+        <td>Loaded successfully.</td>
+        <td><a href="screenshots/latest-nav-privacy-policy.png">screenshots/latest-nav-privacy-policy.png</a></td>
+      </tr>
+<tr>
+        <td>Shipping Policy</td>
+        <td><a href="https://store.punjabkingsipl.in/shipping-policy">https://store.punjabkingsipl.in/shipping-policy</a></td>
+        <td><span class="pass">Pass</span></td>
+        <td>Loaded successfully.</td>
+        <td><a href="screenshots/latest-nav-shipping-policy.png">screenshots/latest-nav-shipping-policy.png</a></td>
+      </tr>
+<tr>
+        <td>Return Policy</td>
+        <td><a href="https://store.punjabkingsipl.in/return-policy">https://store.punjabkingsipl.in/return-policy</a></td>
+        <td><span class="pass">Pass</span></td>
+        <td>Loaded successfully.</td>
+        <td><a href="screenshots/latest-nav-return-policy.png">screenshots/latest-nav-return-policy.png</a></td>
+      </tr>
+<tr>
+        <td>Terms & Conditions</td>
+        <td><a href="https://store.punjabkingsipl.in/terms-and-conditions">https://store.punjabkingsipl.in/terms-and-conditions</a></td>
+        <td><span class="pass">Pass</span></td>
+        <td>Loaded successfully.</td>
+        <td><a href="screenshots/latest-nav-terms-conditions.png">screenshots/latest-nav-terms-conditions.png</a></td>
+      </tr>
+<tr>
+        <td>Collection Landing</td>
+        <td><a href="https://store.punjabkingsipl.in/collection">https://store.punjabkingsipl.in/collection</a></td>
+        <td><span class="fail">Fail</span></td>
+        <td>HTTP 404 or blank/error shell detected.</td>
+        <td><a href="screenshots/latest-nav-collection-landing.png">screenshots/latest-nav-collection-landing.png</a></td>
+      </tr>
+<tr>
+        <td>Match Jersey CTA</td>
+        <td><a href="https://store.punjabkingsipl.in/products/match-jersey">https://store.punjabkingsipl.in/products/match-jersey</a></td>
+        <td><span class="fail">Fail</span></td>
+        <td>HTTP 404 or blank/error shell detected.</td>
+        <td><a href="screenshots/latest-nav-match-jersey-cta.png">screenshots/latest-nav-match-jersey-cta.png</a></td>
+      </tr>
+<tr>
+        <td>Training Jersey CTA</td>
+        <td><a href="https://store.punjabkingsipl.in/products/training-jersey">https://store.punjabkingsipl.in/products/training-jersey</a></td>
+        <td><span class="fail">Fail</span></td>
+        <td>HTTP 404 or blank/error shell detected.</td>
+        <td><a href="screenshots/latest-nav-training-jersey-cta.png">screenshots/latest-nav-training-jersey-cta.png</a></td>
+      </tr></tbody>
+  </table>
+
+  <h2>UI and Copy Checks</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Check</th>
+        <th>Status</th>
+        <th>URL</th>
+        <th>Notes</th>
+        <th>Evidence</th>
+      </tr>
+    </thead>
+    <tbody><tr>
+        <td>PLP filter labels</td>
+        <td><span class="fail">Fail</span></td>
+        <td><a href="https://store.punjabkingsipl.in/products">https://store.punjabkingsipl.in/products</a></td>
+        <td>Internal-looking labels such as Size Depth, L1 Category, and L2 Category are still visible.</td>
+        <td><a href="screenshots/latest-ui-products-filter-labels.png">screenshots/latest-ui-products-filter-labels.png</a></td>
+      </tr>
+<tr>
+        <td>Order tracking page copy</td>
+        <td><span class="fail">Fail</span></td>
+        <td><a href="https://store.punjabkingsipl.in/order-tracking">https://store.punjabkingsipl.in/order-tracking</a></td>
+        <td>Awkward copy "Where is Order Id?" is still present.</td>
+        <td><a href="screenshots/latest-ui-order-tracking-copy-latest.png">screenshots/latest-ui-order-tracking-copy-latest.png</a></td>
+      </tr>
+<tr>
+        <td>PDP helper text formatting</td>
+        <td><span class="fail">Fail</span></td>
+        <td><a href="https://store.punjabkingsipl.in/product/pbks-varsity-jacket-17632075">https://store.punjabkingsipl.in/product/pbks-varsity-jacket-17632075</a></td>
+        <td>Grammar/spacing defects are still visible in the PDP helper text.</td>
+        <td><a href="screenshots/latest-ui-pdp-copy-latest.png">screenshots/latest-ui-pdp-copy-latest.png</a></td>
+      </tr>
+<tr>
+        <td>Mobile footer sanity</td>
+        <td><span class="partial">Partial</span></td>
+        <td><a href="https://store.punjabkingsipl.in/">https://store.punjabkingsipl.in/</a></td>
+        <td>Mobile footer was re-captured for latest review. It remains dense and small, though still readable.</td>
+        <td><a href="screenshots/latest-mobile-home-footer-latest.png">screenshots/latest-mobile-home-footer-latest.png</a></td>
+      </tr></tbody>
+  </table>
+
+  <h2>Functional End-to-End Checks</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Scenario</th>
+        <th>Status</th>
+        <th>Notes</th>
+        <th>Evidence</th>
+      </tr>
+    </thead>
+    <tbody><tr>
+        <td>Login with OTP</td>
+        <td><span class="pass">Pass</span></td>
+        <td>Login succeeded with the provided mobile number and OTP.</td>
+        <td><a href="screenshots/latest-functional-post-login.png">screenshots/latest-functional-post-login.png</a></td>
+      </tr>
+<tr>
+        <td>Profile page access</td>
+        <td><span class="pass">Pass</span></td>
+        <td>Profile details page loaded.</td>
+        <td><a href="screenshots/latest-functional-profile-page.png">screenshots/latest-functional-profile-page.png</a></td>
+      </tr>
+<tr>
+        <td>Add to wishlist</td>
+        <td><span class="pass">Pass</span></td>
+        <td>Product was added to wishlist from the PLP.</td>
+        <td><a href="screenshots/latest-functional-wishlist-latest.png">screenshots/latest-functional-wishlist-latest.png</a></td>
+      </tr>
+<tr>
+        <td>Remove from wishlist</td>
+        <td><span class="pass">Pass</span></td>
+        <td>Wishlist returned to empty state.</td>
+        <td><a href="screenshots/latest-functional-wishlist-empty-latest.png">screenshots/latest-functional-wishlist-empty-latest.png</a></td>
+      </tr>
+<tr>
+        <td>Sort by Price Low to High</td>
+        <td><span class="pass">Pass</span></td>
+        <td>Sort changed the product order and URL updated with sort query.</td>
+        <td><a href="screenshots/latest-functional-sort-price-asc.png">screenshots/latest-functional-sort-price-asc.png</a></td>
+      </tr>
+<tr>
+        <td>Filter by category: Caps</td>
+        <td><span class="pass">Pass</span></td>
+        <td>Product count narrowed from 12 to 1.</td>
+        <td><a href="screenshots/latest-functional-filter-caps.png">screenshots/latest-functional-filter-caps.png</a></td>
+      </tr>
+<tr>
+        <td>PLP add to cart</td>
+        <td><span class="partial">Partial</span></td>
+        <td>PLP CTA opens an inline quick-buy panel instead of directly adding to bag.</td>
+        <td><a href="screenshots/latest-functional-plp-quick-add-latest.png">screenshots/latest-functional-plp-quick-add-latest.png</a></td>
+      </tr>
+<tr>
+        <td>Pincode validation on PDP</td>
+        <td><span class="pass">Pass</span></td>
+        <td>Valid pincode produced a delivery promise on the PDP.</td>
+        <td><a href="screenshots/latest-functional-pincode-check.png">screenshots/latest-functional-pincode-check.png</a></td>
+      </tr>
+<tr>
+        <td>Add to cart from PDP</td>
+        <td><span class="pass">Pass</span></td>
+        <td>Cart counter updated after add-to-cart and bag opened with items.</td>
+        <td><a href="screenshots/latest-functional-cart-with-item-latest.png">screenshots/latest-functional-cart-with-item-latest.png</a></td>
+      </tr>
+<tr>
+        <td>Bag opens with item</td>
+        <td><span class="pass">Pass</span></td>
+        <td>Bag page rendered with item summary and guest/login CTAs.</td>
+        <td><a href="screenshots/latest-functional-cart-with-item-latest.png">screenshots/latest-functional-cart-with-item-latest.png</a></td>
+      </tr>
+<tr>
+        <td>Increase cart quantity</td>
+        <td><span class="pass">Pass</span></td>
+        <td>Quantity increment updated the bag count and totals.</td>
+        <td><a href="screenshots/latest-functional-cart-qty-latest.png">screenshots/latest-functional-cart-qty-latest.png</a></td>
+      </tr>
+<tr>
+        <td>Remove from cart</td>
+        <td><span class="pass">Pass</span></td>
+        <td>Remove action emptied the cart.</td>
+        <td><a href="screenshots/latest-functional-cart-empty-latest.png">screenshots/latest-functional-cart-empty-latest.png</a></td>
+      </tr>
+<tr>
+        <td>Contact form blank validation</td>
+        <td><span class="pass">Pass</span></td>
+        <td>Required-field errors displayed on blank submit.</td>
+        <td><a href="screenshots/latest-functional-contact-validation-latest.png">screenshots/latest-functional-contact-validation-latest.png</a></td>
+      </tr>
+<tr>
+        <td>Order tracking blank validation</td>
+        <td><span class="pass">Pass</span></td>
+        <td>Blank tracking submit showed validation feedback.</td>
+        <td><a href="screenshots/latest-functional-order-tracking-latest.png">screenshots/latest-functional-order-tracking-latest.png</a></td>
+      </tr>
+<tr>
+        <td>Logout</td>
+        <td><span class="pass">Pass</span></td>
+        <td>Logout confirmation returned the session to the homepage.</td>
+        <td><a href="screenshots/latest-functional-logged-out-latest.png">screenshots/latest-functional-logged-out-latest.png</a></td>
+      </tr></tbody>
+  </table>
+</body>
+</html>
